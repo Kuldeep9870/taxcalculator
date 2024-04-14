@@ -14,7 +14,7 @@ For icons and tooltip , Bootstrap 5 is used.
   
 
 - Download the project zip from the repository.
-![download](https://github.com/Kuldeep9870/taxcalculator/assets/117843305/69001c2b-f237-4ed9-9f80-7774e7f88be5)
+![download](https://github.com/Kuldeep9870/taxcalculator/assets/117843305/94a3991b-fc85-4c82-87be-280e56e1a7f1)
 
 - Extract the zip and open the folder.
 
