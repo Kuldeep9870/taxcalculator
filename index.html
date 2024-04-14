@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+
+    <!-- font -->  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital@0;1&display=swap" rel="stylesheet">
+
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" >
+
+    <link rel="stylesheet" href="style.css">
+    <title>Tax Calculator</title>
+</head>
+<body>
+    <form id="form" >
+        
+        <label for="gross">Enter gross annual income   
+            <i class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Gross annual icome is your total salary befor tax deductions"></i>
+        </label>
+        <input type="text" id="gross" name="gross" placeholder="Enter gross annual income" >
+        <span class="info" id="grossinfo" >
+            <i class="bi bi-exclamation-circle" data-bs-toggle="tooltip" data-bs-placement="top" title=""></i>
+        </span>
+
+        
+        <label for="extra">Enter extra income
+            <i class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" 
+              title="Extra income is money you make on top of what you earn from your main job or usual activities">
+            </i>
+        </label>
+        <input type="text" id="extra" name="extra" placeholder="Enter extra income from other sources">
+        <span class="info" id="extrainfo" >
+            <i class="bi bi-exclamation-circle" data-bs-toggle="tooltip" data-bs-placement="top" title=""></i>
+        </span>
+
+        
+        <label for="age">Enter age group   <i class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tax depends on age group"></i></label>
+        <select name="age" id="age" option="none">
+            <option value="none" selected disabled hidden></option> 
+            <option value="1">< 40</option>
+            <option value="2">≥ 40 & < 60</option>
+            <option value="3">≥ 60</option>
+        </select>
+        <span class="info" id="ageinfo" >
+            <i class="bi bi-exclamation-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Please select age group"></i>
+        </span>
+
+
+        <label for="deductions">Enter total applicable deductions   
+            <i class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" 
+                title="Tax deductions are expenses eligible for subtraction from taxable income, reducing the amount of tax owed.">
+            </i>
+        </label>
+        <input type="text" id="deductions" name="deductions"  placeholder="Add total applicable deductions">
+        <span class="info" id="dedinfo" >
+            <i class="bi bi-exclamation-circle" data-bs-toggle="tooltip" data-bs-placement="top" title=""></i>
+        </span>
+
+        
+    
+        <input type="submit" value="Submit" id="clickMe" onclick="validation()"> 
+    </form>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <div class="result">
+            <h1>Your overall income will be</h1>
+            <span id="tax"></span>
+            <h4>after tax deductions</h4>
+            <button onclick="hidePopup()">Close</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
